@@ -1,0 +1,10 @@
+method:
+  name: "sf"
+  train: true
+  sample: true
+
+sample:
+  nfe: 500   
+  eps: 1e-5
+  tol: 100
+

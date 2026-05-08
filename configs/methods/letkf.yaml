@@ -1,0 +1,9 @@
+method:
+  name: "letkf"
+  train: false
+  sample: true
+  stochastic: true
+  inflation: 1.1 
+  eps: 1.0e-6 
+  loc_radius: 5 # 3 | 5 | 7
+  same_channel_only: false

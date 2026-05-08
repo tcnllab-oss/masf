@@ -1,0 +1,8 @@
+method:
+  name: "enkf"
+  train: false
+  sample: true
+  stochastic: true
+  enkf_mode: "full" # "diag" | "full"
+  inflation: 1.05 # 1.0 | 1.05 | 1.1 
+  eps: 1.0e-6 # 1.0e-5 | 1.0e-6

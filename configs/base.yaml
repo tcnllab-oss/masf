@@ -1,0 +1,8 @@
+exp:
+  workdir_root: "./tests"
+  name: "debug"
+
+system:
+  device: "cuda:0"
+  seed: 42
+

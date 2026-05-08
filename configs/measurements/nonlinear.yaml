@@ -1,0 +1,12 @@
+measurement:
+  type: "nonlinear"
+  nonlinear_type: "speed" # "speed" | "sigmoid"
+  T: 0.992
+  terminal_time: 1e-5
+  noise_std: 0.1
+  alpha: 2 # nonlinear specific parameter 
+  same_normalization: true # true
+  normalization_form: "affine"   # "fixed" | "adaptive" | "edm" | "moving"
+  stats_mode: "standard"     # "standard" | "robust"
+  stats_update_mode: "fixed"
+  
