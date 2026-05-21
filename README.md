@@ -1,4 +1,4 @@
-# MASF
+# Rethinking Forward Processes for Score-Based Nonlinear Data Assimilation in High Dimensions (MASF)
 
 This repository provides the official implementation of **Rethinking Forward Processes for Score-Based Nonlinear Data Assimilation in High Dimensions** ([arXiv](https://arxiv.org/abs/2604.02889)).
 
