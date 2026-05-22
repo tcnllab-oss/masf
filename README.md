@@ -6,7 +6,7 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 
 > The code and documentation are currently being organized and will be updated progressively.
 
-## Table of Contents
+## 0. Table of Contents
 
 <details>
 <summary><b>Contents</b></summary>
