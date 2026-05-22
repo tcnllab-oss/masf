@@ -53,13 +53,13 @@ masf/
 └── requirements.txt
 ```
 
-3.2. Installation
-3.3. Usage
-3.3.1. Single Experiment
-3.3.2. Tuning
-3.3.3. Post Evaluation
-4. Tutorials 
-5. Citation
+## 3.2. Installation
+## 3.3. Usage
+### 3.3.1. Single Experiment
+### 3.3.2. Tuning
+### 3.3.3. Post Evaluation
+## 4. Tutorials 
+## 5. Citation
 
 ```bibtex
 @article{yoon2026masf,
