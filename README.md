@@ -111,7 +111,7 @@ A Colab tutorial will be available soon.
 
 ```bash
 python swap/run_tuning.py \
-    --phase finetuning \
+    --until finetuning \
     --dynamic_type kolmogorov \
     --measurement_type grid_mask \
     --method_type ours \
