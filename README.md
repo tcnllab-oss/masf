@@ -9,8 +9,8 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 ## Table of Contents
 
 <details>
-<summary><b>Show / hide</b></summary>
-
+<summary><b>Contents</b></summary>
+  
 - [1. Overview](#1-overview)
 - [2. Results](#2-results)
   - [2.1. Results at 128 × 128 Resolution](#21-results-at-128--128-resolution)
