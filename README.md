@@ -15,8 +15,7 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 - [3. Code Implementation](#3-code-implementation)
   - [3.1. Code Structure](#31-code-structure)
   - [3.2. Installation](#32-installation)
-  - [3.3. Usage](#33-usage)
-    - [3.3.1. Single Experiment](#331-single-experiment)
+  - [3.3. Single Experiment](#33-single-experiment)
 - [4. Tutorials](#4-tutorials)
 - [5. Advanced Usage](#5-advanced-usage)
   - [5.1. Tuning](#51-tuning)
@@ -82,9 +81,7 @@ conda activate masf
 pip install -r requirements.txt
 ```
 
-### 3.3. Usage
-
-#### 3.3.1. Single Experiment
+### 3.3. Single Experiment
 
 ```bash
 python main.py \
