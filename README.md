@@ -6,7 +6,8 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 
 > The code and documentation are currently being organized and will be updated progressively.
 
-## Table of Contents
+<details>
+<summary><b>Table of Contents</b></summary>
 
 - [1. Overview](#1-overview)
 - [2. Results](#2-results)
@@ -23,6 +24,7 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 - [6. Citation](#6-citation)
 - [7. Contact](#7-contact)
 
+</details>
 ## 1. Overview
 
 <p align="center">
