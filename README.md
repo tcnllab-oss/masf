@@ -53,4 +53,22 @@ masf/
 └── requirements.txt
 ```
 
+3.2. Installation
+3.3. Usage
+3.3.1. Single Experiment
+3.3.2. Tuning
+3.3.3. Post Evaluation
+4. Tutorials 
+5. Citation
 
+```bibtex
+@article{yoon2026masf,
+  title={Rethinking Forward Processes for Score-Based Nonlinear Data Assimilation in High Dimensions},
+  author={Yoon, Eunbi and Chang, Won and Kim, Donghan and Kim, Dae Wook},
+  journal={arXiv preprint},
+  year={2026}
+}
+```
+## 6. Contact
+
+For questions, please contact Eunbi Yoon at `eunbiyoon6286@kaist.ac.kr`.
