@@ -37,18 +37,18 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 
 ```text
 masf/
-├── configs/                        # Configuration files
-├── dynamics/                       # Dynamical system implementations: Kolmogorov flow
-├── measurements/                   # Measurement operators: Grid mask, Center mask, Sigmoid, Speed
-├── methods/                        # Filtering methods: EnKF, LETKF, SF, SSLS, MASF
-├── models/                         # Neural network models: UNet, dual-UNet 
+├── configs/                        
+├── dynamics/                       # Kolmogorov flow
+├── measurements/                   # Grid mask, Center mask, Sigmoid, Speed
+├── methods/                        # EnKF, LETKF, SF, SSLS, MASF
+├── models/                         # UNet, dual-UNet 
 ├── main.py                         # Run a single method
-├── swap/                           # Experiment pipeline for tuning and post evaluation
+├── swap/                           
 │   ├── run_tuning.py               # Run hyperparameter tuning phases
 │   ├── run_post_eval.py            # Run post-evaluation and sensitivity analysis
-│   ├── configs/                    # Pipeline, tuning, and post-evaluation configs
+│   ├── configs/                    
 │   └── src/                        # Source code for tuning, post evaluation, and reports
-├── utils/                          # Utilities for training, loading, filtering, and saving
+├── utils/                         
 ├──README.md
 └── requirements.txt
 ```
