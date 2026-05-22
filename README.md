@@ -44,8 +44,8 @@ masf/
 ├── models/                         # Neural network models: UNet, dual-UNet 
 ├── main.py                         # Run a single method
 ├── swap/                           # Experiment pipeline for tuning and post evaluation
-│   ├── run_pipeline.py             # Run hyperparameter tuning phases
 │   ├── run_post_eval.py            # Run post-evaluation and sensitivity analysis
+│   ├── run_tuning.py               # Run hyperparameter tuning phases
 │   ├── configs/                    # Pipeline, tuning, and post-evaluation configs
 │   └── src/                        # Source code for tuning, post evaluation, and reports
 ├── utils/                          # Utilities for training, loading, filtering, and saving
