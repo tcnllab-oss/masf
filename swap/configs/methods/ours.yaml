@@ -1,0 +1,15 @@
+method:
+  name: "ours"
+  train: true
+  sample: true
+
+sample:
+  nfe: 150
+  ode: false
+  s_scale_min: 0.95
+  s_scale_max: 1.6
+  s_scale_power: 1.5
+  g_scale_min: 1.1
+  g_scale_max: 1.5
+  g_scale_power: 2.0
+  terminal_time: 1e-5

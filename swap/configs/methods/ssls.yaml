@@ -1,0 +1,19 @@
+method:
+  name: "ssls"
+  train: true
+  sample: true
+  sigma: 0.05
+
+sample:
+  nfe: 500
+  stepsize: 4e-3
+  anneal_init: 0.001
+  anneal_steps: 1
+  anneal_decay: 0.5
+  tol: 100
+
+
+
+
+
+

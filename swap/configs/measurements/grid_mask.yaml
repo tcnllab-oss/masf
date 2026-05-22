@@ -1,0 +1,10 @@
+measurement:
+  type: grid_mask #
+  T: 0.992
+  terminal_time: 1e-5
+  noise_std: 0.1
+  stride: 10 # 10 | 15 | 20
+  same_normalization: true # true
+  normalization_form: "affine"   # "fixed" | "adaptive" | "edm" | "moving"
+  stats_mode: "standard"     # "standard" | "robust"
+  stats_update_mode: "fixed"

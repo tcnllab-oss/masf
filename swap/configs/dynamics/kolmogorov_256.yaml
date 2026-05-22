@@ -1,0 +1,58 @@
+dynamics:
+  type: kolmogorov
+  num_samples: 100
+  dt: 0.2
+  dim: 256
+  ground_num: 1
+  reynolds: 1000
+
+steps:
+  initial: 50
+  end: 100
+  gap: 10
+
+model:
+  type: UNet
+  in_channels: 2
+  out_channels: 2
+  model_channels: 16
+  num_res_blocks: 1
+  attention_resolutions: [32]
+  dropout: 0.0
+  channel_mult: [1, 2, 4, 8]
+  conv_resample: true
+  dims: 2
+  num_heads: 1
+  num_head_channels: -1
+  num_heads_upsample: -1
+  use_scale_shift_norm: true
+  resblock_updown: true
+  use_new_attention_order: false
+
+pretrain:
+  num_samples: 1000
+  val_ratio: 0.1
+  batch_size: 32
+  epoch: 200
+  lr: 5e-4
+  weight_decay: 0.01
+  betas:
+    - 0.9
+    - 0.99
+  workdir: datasets/kolmogorov
+  override: false
+
+train:
+  pretrained: true
+  override: true
+  epoch: 100
+  batch_size: 32
+  lr: 3e-4
+  weight_decay: 0.01
+  betas:
+    - 0.9
+    - 0.99
+  val_ratio: 0.1
+  online:
+    full_epoch: 110
+  
