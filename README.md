@@ -48,6 +48,12 @@ This repo contains the official implementation of **[Rethinking Forward Processe
   <img src="figures/masf_results_highres.gif" width="95%">
 </p>
 
+### 2.3. 
+<p align="center">
+  <img src="figures/vorticity_pairs_with_live_rmse-2.gif" width="95%">
+</p>
+
+
 ## 3. Code Implementation
 
 ### 3.1. Code Structure
