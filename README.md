@@ -50,7 +50,7 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 
 ### 2.3. Temporal RMSE Evolution
 <p align="center">
-  <img src="figures/vorticity_pairs_with_live_rmse_compressed.gif" width="90%">
+  <img src="figures/vorticity_pairs_with_live_rmse_compressed.gif" width="95%">
 </p>
 
 
