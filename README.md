@@ -48,7 +48,7 @@ This repo contains the official implementation of **[Rethinking Forward Processe
   <img src="figures/masf_results_highres.gif" width="95%">
 </p>
 
-### 2.3. Temporal RMSE Evolution with Speed Measurements
+### 2.3. Temporal RMSE Evolution
 <p align="center">
   <img src="figures/vorticity_pairs_with_live_rmse_compressed.gif" width="90%">
 </p>
