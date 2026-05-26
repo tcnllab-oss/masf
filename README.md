@@ -30,14 +30,39 @@ This repo contains the official implementation of **[Rethinking Forward Processe
 
 ## 1. Overview
 
+**MASF (Measurement-Aware Score-based Filter)** is a score-based data assimilation method for estimating the hidden state of a dynamical system from noisy measurements.
+
+Given a dynamical model and a measurement operator, MASF performs Bayesian filtering by propagating prior samples through the dynamics and then correcting them using the current measurement. It is designed for challenging settings where the state is high-dimensional and the measurements are sparse or nonlinear.
+
+The main component of MASF is a **measurement-aware forward process**. Instead of perturbing states toward standard Gaussian noise, MASF perturbs states toward the measurement space. This allows the learned score model to reflect the relationship between the state and the measurement.
+
+During the measurement-update step, MASF uses guided reverse-time sampling to transport samples from the measurement space back to the state space, producing posterior state estimates. More details are provided in the figure below.
+
 <p align="center">
   <img src="figures/main_figure.png" width="95%">
 </p>
 
-## 2. Results
+### Key Features
 
+- **Measurement-aware forward process**: MASF incorporates the measurement equation directly into the forward process, allowing the learned prior score to reflect the relationship between states and measurements.
+- **Principled likelihood score**: For linear measurements, MASF provides a closed-form likelihood score at perturbed states. For nonlinear measurements, it uses an endpoint Gaussian approximation derived from a Markovian projection of the forward process.
+- **Scalable high-dimensional filtering**: MASF is evaluated on Kolmogorov flow with state dimensions up to `O(10^5)`, including `256 × 256` and `512 × 512` resolutions.
+- **Efficient amortized inference**: The model is pretrained once on simulated dynamics and then fine-tuned during assimilation, reducing online computational cost.
+- **Robustness under sparse and nonlinear measurements**: MASF improves performance under grid masks, center masks, element-wise sigmoid measurements, and channel-coupled speed measurements.
+  
+
+## 2. Results
+  
 ### 2.1. Results at 128 × 128 Resolution
 
+We evaluate MASF on two-dimensional Kolmogorov flow, a high-dimensional nonlinear fluid system governed by the incompressible Navier--Stokes equations. The experiments include both linear and nonlinear measurement operators:
+
+- **Grid mask**: spatially sparse point-wise observations
+- **Center mask**: observations outside a central missing region
+- **Sigmoid**: element-wise nonlinear measurements
+- **Speed**: channel-coupled nonlinear measurements based on local velocity magnitude
+
+Across measurement settings, MASF achieves the best filtering accuracy while maintaining favorable wall-clock time. See the results tables and animations below for quantitative and qualitative comparisons.
 <p align="center">
   <img src="figures/masf_results_128.gif" width="95%">
 </p>
