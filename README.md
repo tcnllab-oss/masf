@@ -56,7 +56,7 @@ During the measurement-update step, MASF uses guided reverse-time sampling to tr
 We evaluate MASF on two-dimensional Kolmogorov flow, a high-dimensional nonlinear fluid system governed by the incompressible Navier--Stokes equations. The experiments include both linear and nonlinear measurement operators:
 
 - **Grid mask**: spatially sparse point-wise measurements
-- **Center mask**: observations outside a central missing region
+- **Center mask**: measurements outside a central missing region
 - **Sigmoid**: element-wise nonlinear measurements
 - **Speed**: channel-coupled nonlinear measurements based on local velocity magnitude
 
