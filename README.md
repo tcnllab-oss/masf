@@ -60,7 +60,7 @@ We evaluate MASF on two-dimensional Kolmogorov flow, a high-dimensional nonlinea
 - **Sigmoid**: element-wise nonlinear measurements
 - **Speed**: channel-coupled nonlinear measurements based on local velocity magnitude
 
-Across measurement settings, MASF achieves the best filtering accuracy while maintaining favorable wall-clock time. See the results tables and animations below for quantitative and qualitative comparisons.
+Across measurement settings, MASF achieves the best filtering accuracy while maintaining favorable wall-clock time. See the results tables and animations below for quantitative and qualitative results.
 
 ### 2.1. Results at 128 × 128 Resolution
 
