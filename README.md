@@ -131,12 +131,15 @@ python main.py \
 ```
 
 ## 4. Tutorials
-
 A Colab tutorial will be available soon.
 
 <!--
 [Open in Colab](COLAB_LINK)
 -->
+
+dataset: https://huggingface.co/datasets/eunbii1/Kolmogorov_flow
+
+model ckpt: It will be avaliable soon.
 
 ## 5. Advanced Usage
 
