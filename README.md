@@ -146,7 +146,7 @@ model ckpt: It will be avaliable soon.
 ### 5.1. Tuning
 
 ```bash
-python swap/run_tuning.py \
+python -m swap.run_tuning \
     --until finetuning \
     --dynamic_type kolmogorov \
     --measurement_type grid_mask \
@@ -157,7 +157,7 @@ python swap/run_tuning.py \
 ### 5.2. Post Evaluation
 
 ```bash
-python swap/run_post_eval.py \
+python -m swap.run_post_eval \
     --phase num_sample \
     --root_dir outputs/kolmogorov_128/grid_mask/ours
 ```
