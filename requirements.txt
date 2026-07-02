@@ -1,0 +1,17 @@
+click==8.1.7
+imageio==2.37.2
+jax==0.4.33
+jaxlib==0.4.33
+jax-cfd==0.2.1
+matplotlib==3.9.2
+numpy==2.1.1
+omegaconf==2.3.0
+optuna>=3.0
+PyYAML==6.0.3
+scipy==1.14.1
+seaborn==0.13.2
+tqdm==4.66.5
+
+# Install a torch/torchvision build that matches your CUDA driver separately.
+# Example for CUDA 13 nightly builds:
+# pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu130
