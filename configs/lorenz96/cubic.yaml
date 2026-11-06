@@ -1,0 +1,84 @@
+exp:
+  workdir_root: ./results
+
+system:
+  device: cuda:0
+  seed: 42
+
+method:
+  name: nonlinear_ours
+  target: x0_precond
+  clean_h: true
+
+sample:
+  nfe: 200
+  solver: exp
+  inflation: 1.5
+
+time:
+  train_T: 0.992
+  sample_T: 0.992
+  terminal_time: 1.0e-04
+
+measurement:
+  type: cubic
+  alpha: 0.01
+  noise_std: 0.1
+  same_normalization: false
+  normalization_form: affine
+  stats_mode: standard
+  stats_update_mode: adaptive
+
+dynamics:
+  type: lorenz96
+  num_samples: 100
+  dim: 40
+  dt: 0.05
+  forcing: 8.0
+  prior_mean: 0.0
+  prior_std: 1.0
+  perturb_std: 0.1
+  solver: Runge-Kutta
+
+steps:
+  initial: 25
+  end: 125
+  gap: 10
+
+eval: measurement
+
+model:
+  type: dual_unet1d
+  model_dim: 64
+  init_dim: 32
+  out_dim_1: 1
+  out_dim_2: 1
+  dim_mults: [1, 2, 4]
+  channels: 1
+  dropout: 0.0
+  attn_dim_head: 32
+  attn_heads: 4
+  sinusoidal_pos_emb_theta: 10000
+  circular_padding: true
+
+pretrain:
+  ckpt: checkpoints/lorenz96/cubic.pt
+  num_samples: 1000
+  val_ratio: 0.1
+  batch_size: 32
+  epoch: 200
+  lr: 0.0003
+  weight_decay: 0.01
+  betas: [0.9, 0.99]
+
+train:
+  pretrained: true
+  epoch: 500
+  batch_size: 32
+  lr: 5.0e-05
+  weight_decay: 0.0
+  betas: [0.9, 0.99]
+  val_ratio: 0.0
+  online:
+    full_epoch: 100
+    finetune_first: true

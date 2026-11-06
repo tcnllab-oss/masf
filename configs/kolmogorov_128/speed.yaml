@@ -1,0 +1,80 @@
+exp:
+  workdir_root: ./results
+
+system:
+  device: cuda:0
+  seed: 42
+
+method:
+  name: nonlinear_ours
+
+sample:
+  nfe: 200
+
+time:
+  train_T: 1.0
+  sample_T: 0.995
+  terminal_time: 0.0
+
+measurement:
+  type: speed
+  noise_std: 0.1
+  tau: 3
+  sharpness: 1
+  same_normalization: false
+  normalization_form: scale_only
+  stats_mode: robust
+  stats_update_mode: adaptive
+
+dynamics:
+  type: kolmogorov
+  num_samples: 10
+  dim: 128
+  dt: 0.2
+  reynolds: 1000
+
+steps:
+  initial: 50
+  end: 100
+  gap: 10
+
+model:
+  type: dual_unet
+  in_channels: 2
+  out_channels1: 2
+  out_channels2: 2
+  model_channels: 32
+  num_res_blocks: 2
+  attention_resolutions: [16]
+  channel_mult: [1, 2, 4, 8]
+  dropout: 0.0
+  conv_resample: true
+  dims: 2
+  num_heads: 1
+  num_head_channels: -1
+  num_heads_upsample: -1
+  use_scale_shift_norm: false
+  resblock_updown: false
+  use_new_attention_order: false
+
+pretrain:
+  ckpt: checkpoints/kolmogorov_128/speed.pt
+  num_samples: 1000
+  val_ratio: 0.1
+  batch_size: 32
+  epoch: 200
+  lr: 0.0003
+  weight_decay: 0.01
+  betas: [0.9, 0.99]
+
+train:
+  pretrained: true
+  epoch: 200
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.0
+  betas: [0.9, 0.99]
+  val_ratio: 0.0
+  online:
+    full_epoch: 120
+    finetune_first: true

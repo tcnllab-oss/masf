@@ -1,0 +1,78 @@
+exp:
+  workdir_root: ./results
+
+system:
+  device: cuda:0
+  seed: 42
+
+method:
+  name: ours
+
+sample:
+  nfe: 200
+
+time:
+  train_T: 0.992
+  sample_T: 0.995
+  terminal_time: 1.0e-05
+
+measurement:
+  type: grid_mask
+  noise_std: 0.1
+  stride: 15
+  same_normalization: false
+  normalization_form: affine
+  stats_mode: standard
+  stats_update_mode: moving
+  momentum: 0.2
+
+dynamics:
+  type: kolmogorov
+  num_samples: 10
+  dim: 256
+  dt: 0.2
+  reynolds: 1000
+
+steps:
+  initial: 50
+  end: 100
+  gap: 10
+
+model:
+  type: UNet
+  in_channels: 2
+  out_channels: 2
+  model_channels: 16
+  num_res_blocks: 1
+  attention_resolutions: [32]
+  channel_mult: [1, 2, 4, 8]
+  dropout: 0.0
+  conv_resample: true
+  dims: 2
+  num_heads: 1
+  num_head_channels: -1
+  num_heads_upsample: -1
+  use_scale_shift_norm: true
+  resblock_updown: true
+  use_new_attention_order: false
+
+pretrain:
+  ckpt: checkpoints/kolmogorov_256/grid_mask.pt
+  num_samples: 1000
+  val_ratio: 0.1
+  batch_size: 16
+  epoch: 300
+  lr: 0.0005
+  weight_decay: 0.01
+  betas: [0.9, 0.99]
+
+train:
+  pretrained: true
+  epoch: 100
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.01
+  betas: [0.9, 0.99]
+  val_ratio: 0.1
+  online:
+    full_epoch: 110
