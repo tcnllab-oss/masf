@@ -141,7 +141,7 @@ Results are saved to `results/<dynamics>/<measurement>/seed<seed>/` (change with
 | Notebook | Description |
 |---|---|
 | [`notebooks/lorenz96.ipynb`](notebooks/lorenz96.ipynb) | Lorenz96 with cubic measurements: pretrain from scratch and run filtering with online fine-tuning |
-| [`notebooks/kolmogorov.ipynb`](notebooks/kolmogorov.ipynb) | Kolmogorov flow (128 × 128, grid mask): load the pretrained checkpoint and run filtering with online fine-tuning |
+| [`notebooks/kolmogorov_grid_mask.ipynb`](notebooks/kolmogorov_grid_mask.ipynb) | Kolmogorov flow (128 × 128, grid mask): load the pretrained checkpoint and run filtering with online fine-tuning |
 | [`notebooks/kolmogorov_center_mask.ipynb`](notebooks/kolmogorov_center_mask.ipynb) | Kolmogorov flow (128 × 128, center mask): load the pretrained checkpoint and run filtering with online fine-tuning |
 | [`notebooks/kolmogorov_speed.ipynb`](notebooks/kolmogorov_speed.ipynb) | Kolmogorov flow (128 × 128, speed): load the pretrained checkpoint and run filtering with online fine-tuning |
 
