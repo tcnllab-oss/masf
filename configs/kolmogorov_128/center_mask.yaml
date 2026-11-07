@@ -65,7 +65,7 @@ pretrain:
 
 train:
   pretrained: true
-  batch_size: 16
+  batch_size: 10
   lr: 5.0e-05
   weight_decay: 0.01
   betas: [0.9, 0.99]
