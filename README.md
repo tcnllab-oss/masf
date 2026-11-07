@@ -4,7 +4,6 @@
 
 This repo contains the official implementation of **[Rethinking Forward Processes for Score-Based Nonlinear Data Assimilation in High Dimensions](https://arxiv.org/abs/2604.02889)**.
 
-> The code and documentation are currently being organized and will be updated progressively.
 
 ## 0. Table of Contents
 
