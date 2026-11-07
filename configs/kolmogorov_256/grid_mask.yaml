@@ -10,10 +10,7 @@ method:
 
 sample:
   nfe: 200
-
-time:
-  train_T: 0.992
-  sample_T: 0.995
+  T: 0.995
   terminal_time: 1.0e-05
 
 measurement:

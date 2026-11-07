@@ -52,10 +52,7 @@ class Nonlinear_Ours:
         loss_ft = nn.MSELoss()
         target = cfg["method"].get("target", "x0")
         clean_h = cfg["method"].get("clean_h", False)
-
-        # time configuration
-        terminal_time = float(cfg["time"]["terminal_time"])
-        T = float(cfg["time"]["train_T"])
+        train_T = float(cfg["train"].get("T", 1.0))
 
         pbar = tqdm(range(n_epoch), mininterval=5.0, maxinterval=50.0, leave=False, desc=f"train(step={step})", file=sys.stdout)
 
@@ -67,7 +64,7 @@ class Nonlinear_Ours:
                 x0 = x.to(device)
 
                 # forward process
-                t = torch.rand(x0.size(0), device=device) * (T - terminal_time) + terminal_time
+                t = torch.rand(x0.size(0), device=device) * train_T
                 xt, _ = measurement.forward_process(x0, t)
                 z = measurement.H(x0) if clean_h else measurement.observation(x0)
 
@@ -96,8 +93,8 @@ class Nonlinear_Ours:
         device, sc = cfg["system"]["device"], cfg["sample"]
         nfe, target = sc["nfe"], cfg["method"].get("target", "x0")
 
-        terminal_time = float(cfg["time"]["terminal_time"])
-        T = float(cfg["time"]["sample_T"])
+        terminal_time = float(cfg["sample"]["terminal_time"])
+        T = float(cfg["sample"]["T"])
 
         model.eval()
         x0 = x0.to(device)

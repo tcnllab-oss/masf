@@ -34,7 +34,7 @@ class Speed(Measurement):
             predicted_x_norm, predicted_h_norm = model(x_norm, t)
             a_t = a(t).view(-1, *([1] * (x_norm.ndim - 1)))
 
-            mean = x_norm - a_t * (predicted_x_norm - predicted_h_norm)
+            mean = x_norm + (a(t1).view_as(a_t) - a_t) * (predicted_x_norm - predicted_h_norm)
             Sigma_t_1 = self.Sigma(t, t1)
 
             residual = z_norm - mean

@@ -59,9 +59,6 @@ class Ours:
         global_step = 0
         target = cfg["method"].get("target", "x0")
 
-        # time configuration
-        terminal_time = float(cfg["time"]["terminal_time"])
-        T = float(cfg["time"]["train_T"])
 
         pbar = tqdm(range(n_epoch), mininterval=5.0, maxinterval=50.0, leave=False, desc=f"train(step={step})", file=sys.stdout)
 
@@ -74,7 +71,7 @@ class Ours:
                 x0 = x.to(device)
 
                 # forward process
-                t = torch.rand(x0.size(0), device=device) * (T - terminal_time) + terminal_time
+                t = torch.rand(x0.size(0), device=device)
                 xt, _ = measurement.forward_process(x0, t)
 
                 predicted = model(xt, t)
@@ -103,8 +100,8 @@ class Ours:
     def sample(self, cfg, model, x0, z, measurement):
         device, nfe = cfg["system"]["device"], cfg["sample"]["nfe"]
 
-        terminal_time = float(cfg["time"]["terminal_time"])
-        T = float(cfg["time"]["sample_T"])
+        terminal_time = float(cfg["sample"]["terminal_time"])
+        T = float(cfg["sample"]["T"])
 
         model.eval()
         x0 = x0.to(device)

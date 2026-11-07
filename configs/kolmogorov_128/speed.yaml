@@ -10,11 +10,8 @@ method:
 
 sample:
   nfe: 200
-
-time:
-  train_T: 1.0
-  sample_T: 0.995
-  terminal_time: 0.0
+  T: 0.9875
+  terminal_time: 1.0e-03
 
 measurement:
   type: speed
@@ -68,6 +65,7 @@ pretrain:
   betas: [0.9, 0.99]
 
 train:
+  T: 0.992
   pretrained: true
   epoch: 200
   batch_size: 32

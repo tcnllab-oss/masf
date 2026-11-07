@@ -14,10 +14,7 @@ sample:
   nfe: 200
   solver: exp
   inflation: 1.5
-
-time:
-  train_T: 0.992
-  sample_T: 0.992
+  T: 0.992
   terminal_time: 1.0e-04
 
 measurement:

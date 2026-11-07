@@ -142,5 +142,7 @@ Results are saved to `results/<dynamics>/<measurement>/seed<seed>/` (change with
 |---|---|
 | [`notebooks/lorenz96.ipynb`](notebooks/lorenz96.ipynb) | Lorenz96 with cubic measurements: pretrain from scratch and run filtering with online fine-tuning |
 | [`notebooks/kolmogorov.ipynb`](notebooks/kolmogorov.ipynb) | Kolmogorov flow (128 × 128, grid mask): load the pretrained checkpoint and run filtering with online fine-tuning |
+| [`notebooks/kolmogorov_center_mask.ipynb`](notebooks/kolmogorov_center_mask.ipynb) | Kolmogorov flow (128 × 128, center mask): load the pretrained checkpoint and run filtering with online fine-tuning |
+| [`notebooks/kolmogorov_speed.ipynb`](notebooks/kolmogorov_speed.ipynb) | Kolmogorov flow (128 × 128, speed): load the pretrained checkpoint and run filtering with online fine-tuning |
 
 The notebooks are saved with their outputs, so the result figures can be viewed without running them. Checkpoints and data are downloaded from Hugging Face ([model](https://huggingface.co/eunbii1/masf), [dataset](https://huggingface.co/datasets/eunbii1/masf)) inside the notebooks, and figures are saved to `notebooks/outputs/`. Install Jupyter with `pip install jupyter` to run them.
