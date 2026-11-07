@@ -70,7 +70,6 @@ pretrain:
 
 train:
   pretrained: true
-  epoch: 500
   batch_size: 32
   lr: 5.0e-05
   weight_decay: 0.0

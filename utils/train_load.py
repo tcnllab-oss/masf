@@ -46,7 +46,7 @@ def load_trained_model(cfg, method, measurement, dynamics, i, index, steps, prio
             print(f"{i} th step training...")
             return train_model(cfg, model, tr, method, measurement, prior, device, path, tr["online"]["full_epoch"], i)
         print("[INIT] step 0 initialized from scratch")
-        return train_model(cfg, model, tr, method, measurement, prior, device, path, tr["epoch"], i)
+        return train_model(cfg, model, tr, method, measurement, prior, device, path, tr.get("epoch", 200), i)
 
     prev_path = os.path.join(workdir, "ckpt", f"ckpt_{int(steps[index - 1])}th_step.pt")
     if os.path.exists(prev_path):
@@ -54,4 +54,4 @@ def load_trained_model(cfg, method, measurement, dynamics, i, index, steps, prio
     else:
         model = load_pretrained_model(cfg, model, dynamics, method, measurement, steps, device)
     print(f"{i} th step training...")
-    return train_model(cfg, model, tr, method, measurement, prior, device, path, tr["online"]["full_epoch"] if tr["pretrained"] else tr["epoch"], i)
+    return train_model(cfg, model, tr, method, measurement, prior, device, path, tr["online"]["full_epoch"] if tr["pretrained"] else tr.get("epoch", 200), i)
